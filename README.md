@@ -6,8 +6,8 @@
 
 Działający program
 
-![Działający program](scr0.png)
+![Działający program](screens/scr0.png)
 
 Dodanie do lokalnego repo, commit oraz push na gh repo
 
-![Dodanie do lokalnego repo, commit oraz push na gh repo](scr1.png)
+![Dodanie do lokalnego repo, commit oraz push na gh repo](screens/scr1.png)
