@@ -11,3 +11,6 @@ Działający program
 Dodanie do lokalnego repo, commit oraz push na gh repo
 
 ![Dodanie do lokalnego repo, commit oraz push na gh repo](screens/scr1.png)
+
+## Krok 2: Dodanie dockerfile oraz zbudowanie kontenera
+
