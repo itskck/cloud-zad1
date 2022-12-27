@@ -19,10 +19,12 @@ Treść wykorzystywanego dockerfile
 
 ![](screens/scr2.png)
 
+### B:
 Budowanie obrazu:
 
 ![](screens/scr3.png)
 
+### C:
 Uruchomienie kontenera i przetestowanie programu:
 
 ![](screens/scr4.png)
