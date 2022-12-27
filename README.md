@@ -16,10 +16,13 @@ Dodanie do lokalnego repo, commit oraz push na gh repo
 
 ### A:
 Treść wykorzystywanego dockerfile
+
 ![](screens/scr2.png)
 
 Budowanie obrazu:
+
 ![](screens/scr3.png)
 
 Uruchomienie kontenera i przetestowanie programu:
+
 ![](screens/scr4.png)
