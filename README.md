@@ -130,6 +130,7 @@ oraz na DockerHubie:
 Za cachowanie odpowiadają flagi cache-from oraz cache-to. Cache jest wysyłany do registry.
 
 Tagowanie:
+
 ![](screens/scr5.png)
 
 Tagi zostały dodane zgodnie z nazewnictwej SEMVER na GitHubie oraz DockerHubie. Dodany został tag o początku 'v', więc workflow włącza się automatycznie. Odpowiada za to nastepująca linia Dockerfila:
