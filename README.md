@@ -1,8 +1,6 @@
 # cloud\zad1
 
-# Zadanie 1
-
-## Krok 1: Stworzenie programu oraz przesłanie go na repo
+## Zadanie 1: Stworzenie programu oraz przesłanie go na repo
 
 Działający program oraz wynik dzialania
 
@@ -42,7 +40,7 @@ Dodanie do lokalnego repo, commit oraz push na gh repo
 
 ![Dodanie do lokalnego repo, commit oraz push na gh repo](screens/scr1.png)
 
-## Krok 2: Dodanie dockerfile oraz zbudowanie kontenera
+## Zadanie 2: Dodanie dockerfile oraz zbudowanie kontenera
 
 ### A:
 Treść wykorzystywanego dockerfile
@@ -59,7 +57,7 @@ Uruchomienie kontenera i przetestowanie programu:
 
 ![](screens/scr4.png)
 
-## Krok 3: GH Actions
+## Zadanie 3: GH Actions
 
 Przygotowany plik fib.yml
 ```
@@ -152,7 +150,7 @@ oraz na DockerHubie:
 
 ![](screens/scr8.png)
 
-## 4
+## Zadanie 4
 
 Komenda 
 ```
