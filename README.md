@@ -4,7 +4,37 @@
 
 ## Krok 1: Stworzenie programu oraz przesłanie go na repo
 
-Działający program
+Działający program oraz wynik dzialania
+
+```
+void main() {
+  print('Juliusz Piskor, IMST 2.3');
+  print('fib.exe');
+  print('-----------');
+  int n;
+  print('Wprowadź numer > 0  i  < 20');
+  String? inTemp = stdin.readLineSync();
+
+  try {
+    n = int.parse(inTemp!);
+    if (n > 20) {
+      print('Numer jest za duży!');
+      return;
+    }
+  } catch (e) {
+    log(e.toString());
+    return;
+  }
+  print(fib(n));
+}
+
+int fib(int n) {
+  if (n < 2) {
+    return n;
+  }
+  return fib(n - 2) + fib(n - 1);
+}
+```
 
 ![Działający program](screens/scr0.png)
 
@@ -29,10 +59,9 @@ Uruchomienie kontenera i przetestowanie programu:
 
 ![](screens/scr4.png)
 
-## Krok 3: Stworzenie GH Actions
+## Krok 3: GH Actions
 
-### A: 
-
+Przygotowany plik fib.yml
 ```
 name: GitHub Action for zad1 (fib)
 
@@ -92,3 +121,59 @@ jobs:
           cache-from: type=registry,ref=docker.io/itskck/cloud-zad1:cache
           cache-to: type=registry,ref=docker.io/itskck/cloud-zad1:cache,mode=max
 ```
+Na początku wykonywane są akcje buildx oraz quemu, dzięki czemu obraz zbudowac sie może na dwie (lub więcej) architektury. Następnie wykonują sie wymagane do wykonania zadanie logowania: do dockerhuba oraz ghcr, przy pomocy secretsów umieszczonych w repo. Na końcu następuje zbudowanie i spushowanie.
+
+Obrazy dostępne są na dwóch platformach, co widoczne jest na GitHub packages:
+![](screens/scr9.png)
+
+oraz na DockerHubie:
+![](screens/scr10.png)
+
+Za cachowanie odpowiadają flagi cache-from oraz cache-to. Cache jest wysyłany do registry.
+
+Tagowanie
+![](screens/scr5.png)
+
+Tagi zostały dodane zgodnie z nazewnictwej SEMVER na GitHubie oraz DockerHubie. Dodany został tag o początku 'v', więc workflow włącza się automatycznie. Odpowiada za to nastepująca linia Dockerfila:
+
+```
+push:
+    branches: [main]
+    tags: [v*]
+```
+
+Workflowy przechodzą poprawnie:
+![](screens/scr6.png)
+
+Wynik działania widoczny jest na packages: 
+![](screens/scr7.png)
+
+oraz na DockerHubie:
+
+![](screens/scr8.png)
+
+## 4
+
+Komenda 
+```
+gh workflow list
+```
+![](screens/scr11.png)
+
+Workflowy oraz ich status dostępnę są w zakładce Actions na repo. Ostatni workflow dla maina i dla wczesniej utworzonego taga przeszedł poprawnie.
+
+![](screens/scr12.png)
+
+Poprawność wykonania kroków jest widoczna na screenach w zadaniu 3.
+
+Żeby pobrać obrazu z repozytorium wykorzystana była komenda widoczna na ghcr:
+```
+docker pull ghcr.io/itskck/cloud-zad1:latest@sha256:9344ac5689278f340d4a14dc6c7d934be103d6a4ddc53f688ab4d6b3169f5e50
+```
+![](screens/scr13.png)
+
+Uruchomienie obrazu:
+
+![](screens/scr14.png)
+
+
