@@ -5,4 +5,4 @@
 ## Krok 1: Stworzenie programu oraz przesłanie go na repo
 
 ![Dodanie do lokalnego repo, commit oraz push na gh repo]
-(screens/scr1.png)
+(./screens/scr1.png)
